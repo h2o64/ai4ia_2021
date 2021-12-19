@@ -1,4 +1,4 @@
-In this paper, I will explain my intuitions that led to the `RC1' and `RC2' models. Contrary to what the title "Hackathon of Artificial Intelligence for Industrial Applications" suggested, the diversity of the `example` time series immediately ruled out classical AI (~ neural networks) for me.
+In this paper, I will explain my intuitions that led to the `RC1` and `RC2` models. Contrary to what the title "Hackathon of Artificial Intelligence for Industrial Applications" suggested, the diversity of the `example` time series immediately ruled out classical AI (~ neural networks) for me.
 
 When I saw the obvious Gibbs phenomenon (figure below), I immediately understood that it was a filtering problem.![`example` dataset : input 1, output
 1](res/gibbs_phenomenom.png)
