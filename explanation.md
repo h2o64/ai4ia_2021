@@ -11,14 +11,14 @@ So I played with the Fourier decomposition for a while (trying to smooth out a t
 Here, we can clearly recognize the behavior of a low-pass RC filter. So I went on this track.<img src="res/rc_circuit.png" alt="RC Filter (source:
 Wikipedia)" style="zoom:20%;" />
 
-An RC filter has a transfer function written $H_{R,C}(z) = \frac{RCz}{1 + RCz}$ where $R$ is the resistivity of the resistor and $C$ is the capacitance of the
+An RC filter has a transfer function written <img src="https://render.githubusercontent.com/render/math?math=H_{R,C}(z) = \frac{RCz}{1 + RCz}"> where R is the resistivity of the resistor and C is the capacitance of the
 capacitor.
-Looking at the outputs more carefully, we notice that the output is actually an affine transform of the filtered. Thus, the output $Y_{i,j}$
-of the input $X_i$ is written
-$$
-Y_{i,j} = a_{i,j} \times \text{filter}(H_{R_{i,j},C_{i,j}}, X_i) + b_{i,j}
-$$
-It is then sufficient to find $\theta_{i,j} = (a_{i,j},b_{i,j},R_{i,j},C_{i,j})$ by minimizing the mean square error. I use here the simplex method to realize this minimization since the number of variables is small (and since the problem is not necessarily differentiable, a gradient descent is not necessarily easy). I get very good results on most of the curves.
+Looking at the outputs more carefully, we notice that the output is actually an affine transform of the filtered. Thus, the output <img src="https://render.githubusercontent.com/render/math?math=Y_{i,j}">
+of the input <img src="https://render.githubusercontent.com/render/math?math=X_i"> is written
+
+<img src="https://render.githubusercontent.com/render/math?math=Y_{i,j} = a_{i,j} \times \text{filter}(H_{R_{i,j},C_{i,j}}, X_i) + b_{i,j}">
+
+It is then sufficient to find <img src="https://render.githubusercontent.com/render/math?math=\theta_{i,j} = (a_{i,j},b_{i,j},R_{i,j},C_{i,j})"> by minimizing the mean square error. I use here the simplex method to realize this minimization since the number of variables is small (and since the problem is not necessarily differentiable, a gradient descent is not necessarily easy). I get very good results on most of the curves.
 
 ![`phase1` dataset : prediction with input 0 and output 1](res/capacitor_rc1.png)
 
@@ -33,10 +33,10 @@ sortie 1](res/gibbs_rc1.png)
 
 It is clear that the filter is not sensitive enough to Gibbs phenomena. So I naturally decide to increase the order of the filter to
 adopt the following more general form
-$$
-H_{C_1, C_2, C_3, C_4, C_5}(z) = \frac{C_1 z + C_2}{C_3 z^2 + C_4 z + C_5}
-$$
-By minimizing with the same method as before, the training time is much longer (even if it remains very low compared to neural networks) and improves the results (a mean square error divided by $50$ on `example` and by $5$ on `phase1`). Here is an example (figure below)
+
+<img src="https://render.githubusercontent.com/render/math?math=H_{C_1, C_2, C_3, C_4, C_5}(z) = \frac{C_1 z + C_2}{C_3 z^2 + C_4 z + C_5}">
+
+By minimizing with the same method as before, the training time is much longer (even if it remains very low compared to neural networks) and improves the results (a mean square error divided by 50 on `example` and by 5 on `phase1`). Here is an example (figure below)
 
 ![jeu de données `example` : prédiction avec l'entrée entrée 1 et la
 sortie 1](res/gibbs_rc2.png)
