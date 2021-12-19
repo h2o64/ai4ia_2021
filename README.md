@@ -4,7 +4,7 @@
 
 # AI4IA : Artificial Intelligence for Industrial Application
 
-The challenge AI4IA was organized by [SKF](https://www.skf.com/fr) and hosted by [Agorize](https://www.agorize.com/fr/challenges/ai4ia?lang=fr). The goal of the challenge was designed as followed : we had `input` signals and `output` signals (1 input signal was assigned with 5 output signals). The goal was to predict the 5 output signals along time given 1 input signal.
+The challenge AI4IA was organized by [SKF](https://www.skf.com/fr) and hosted by [Agorize](https://www.agorize.com/fr/challenges/ai4ia?lang=fr). The goal of the challenge was designed as followed : we had `input` signals and `output` signals (1 input signal was assigned tp 5 output signals). The goal was to predict the 5 output signals along time given 1 input signal.
 
 This Github repository provides my solution to this problem
 
